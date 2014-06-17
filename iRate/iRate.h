@@ -47,6 +47,7 @@
 
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#import "SDCAlertView.h"
 #else
 #import <Cocoa/Cocoa.h>
 #endif
@@ -67,6 +68,7 @@ static NSString *const iRateUpdateMessageKey = @"iRateUpdateMessage";
 static NSString *const iRateCancelButtonKey = @"iRateCancelButton";
 static NSString *const iRateRemindButtonKey = @"iRateRemindButton";
 static NSString *const iRateRateButtonKey = @"iRateRateButton";
+static NSString *const iRateFeedbackButtonKey = @"iRateFeedbackButton";
 
 #endif
 
@@ -121,10 +123,12 @@ typedef NS_ENUM(NSUInteger, iRateErrorCode)
 //message text, you may wish to customise these
 @property (nonatomic, copy) NSString *messageTitle;
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *shortMessage;
 @property (nonatomic, copy) NSString *updateMessage;
 @property (nonatomic, copy) NSString *cancelButtonLabel;
 @property (nonatomic, copy) NSString *remindButtonLabel;
 @property (nonatomic, copy) NSString *rateButtonLabel;
+@property (nonatomic, copy) NSString *feedbackButtonLabel;
 
 //debugging and prompt overrides
 @property (nonatomic, assign) BOOL useAllAvailableLanguages;
