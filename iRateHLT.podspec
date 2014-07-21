@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version  = '1.10.5'
   s.license  = 'zlib'
   s.summary  = 'A handy class that prompts users of your iPhone or Mac App Store app to rate your application after using it for a while.'
-  s.homepage = 'https://github.com/tpalmer/iRate'
+  s.homepage = 'https://github.com/gofullstack/iRate'
   s.authors  = 'Travis Palmer'
   s.source   = { :git => 'https://github.com/gofullstack/iRate.git', :tag => '1.10.5' }
   s.source_files = 'iRate/iRate.{h,m}'
