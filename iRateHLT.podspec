@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source_files = 'iRate/iRate.{h,m}'
   s.resources    = 'iRate/iRate.bundle'
   s.requires_arc = true
-  s.ios.deployment_target = '7.0'
+  s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.6'
   s.ios.dependency 'SDCAlertViewHLT'
 end
