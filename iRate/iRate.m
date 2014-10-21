@@ -813,25 +813,12 @@ static NSString *const iRateMacAppStoreURLFormat = @"macappstore://itunes.apple.
         NSString *message = self.ratedAnyVersion? self.updateMessage: self.message;
 
 #if TARGET_OS_IPHONE
-
-        id alert;
-        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
-            // iOS 7
-            alert = [[SDCAlertView alloc] initWithTitle:self.messageTitle
-                                                message:self.message
-                                               delegate:(id<UIAlertViewDelegate>)self
-                                      cancelButtonTitle:[self.cancelButtonLabel length] ? self.cancelButtonLabel: nil
-                                      otherButtonTitles:self.rateButtonLabel, nil];
-            [alert setDoNotBoldCancel:@YES];
-        }
-        else {
-            alert = [[UIAlertView alloc] initWithTitle:self.messageTitle
-                                               message:self.shortMessage
-                                              delegate:(id<UIAlertViewDelegate>)self
-                                     cancelButtonTitle:[self.cancelButtonLabel length] ? self.cancelButtonLabel: nil
-                                     otherButtonTitles:self.rateButtonLabel, nil];
-        }
-
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:self.messageTitle
+                                                        message:message
+                                                       delegate:(id<UIAlertViewDelegate>)self
+                                              cancelButtonTitle:[self.cancelButtonLabel length] ? self.cancelButtonLabel: nil
+                                              otherButtonTitles:self.rateButtonLabel, nil];
         if ([self.remindButtonLabel length])
         {
             [alert addButtonWithTitle:self.remindButtonLabel];
